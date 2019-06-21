@@ -1,6 +1,9 @@
 // See default config https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
 module.exports = {
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'Helvetica-neue', 'sans-serif']
+    },
     extend: {}
   },
   variants: {}
