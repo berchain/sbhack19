@@ -1,14 +1,17 @@
 <template>
-  <div class="container">
-    <figure>
-      <img src="../assets/images/banana.webp" alt="" />
-    </figure>
-  </div>
+  <app-view>
+    <AppHeader title="Banana Review" />
+    <hero />
+  </app-view>
 </template>
 
 <script>
+import Hero from '../components/Hero'
+import AppHeader from '../components/AppHeader'
+import AppView from '../components/AppView'
+
 export default {
-  components: {},
+  components: { AppView, AppHeader, Hero }
   async mounted() {
     await this.$store.dispatch('init')
     // this.$store.dispatch('contract/getProductInfo', '123') // how to call a store method
@@ -16,4 +19,10 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.hero img {
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: auto;
+}
+</style>
