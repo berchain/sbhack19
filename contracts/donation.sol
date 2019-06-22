@@ -15,11 +15,16 @@ contract LibraToken is ERC20 {
   }
 }
 
-contract donation is ERC20 {
+contract Donation is ERC20 {
     event donated(address indexed _from, address indexed _to, uint256 amount);
+
+    function buy() public payable{
+      //the value of Libra is equal to ethers. 
+      _mint(msg.sender, msg.value);
+    }
     
-    function donate(address payable _to) public payable{
-        transfer(_to, msg.value);
-        emit donated(msg.sender, _to, msg.value);
+    function donate(address payable to, uint256 amount) public{
+      transfer(to, amount);
+      emit donated(msg.sender, to, amount);
     }
 }
