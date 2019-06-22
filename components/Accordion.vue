@@ -45,9 +45,9 @@ export default {
 .is-open.journey__point:before {
   transform: rotate(-45deg);
 }
-.journey__point.is-last {
-  @apply border-l-4 border-transparent pb-10;
-}
+/*.journey__point.is-last {*/
+/*  @apply border-l-4 border-transparent pb-10;*/
+/*}*/
 .accordion__content {
   display: none;
 }

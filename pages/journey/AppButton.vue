@@ -1,6 +1,6 @@
 <template>
   <button
-    class="border-4 border-black rounded-full py-3 text-2xl font-semibold bg-yellow-500 focus:bg-yellow-700 min-w-24"
+    class="border-4 border-black rounded-full py-3 text-2xl font-semibold bg-yellow-500 focus:bg-yellow-700 w-full"
     @click="$router.push(url)"
   >
     {{ cta }}

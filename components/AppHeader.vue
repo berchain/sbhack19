@@ -1,6 +1,6 @@
 <template>
-  <header class="p-3 flex justify-between">
-    <h1 class="text-3xl font-semibold">{{ title }}</h1>
+  <header class="p-3 flex justify-between mb-12">
+    <h1 class="text-3xl font-semibold leading-tight">{{ title }}</h1>
     <nuxt-link to="/" class="-mt-3 -mr-3">
       <img src="../assets/images/fairtrade.png" alt="" class="w-12" />
     </nuxt-link>
