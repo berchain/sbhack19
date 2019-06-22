@@ -2,7 +2,7 @@
  * All the contract related operations
  */
 import SupplyChain from '../build/contracts/SupplyChain.json'
-import Donation from '../build/contracts/donation.json'
+import Donation from '../build/contracts/Donation.json'
 export const state = () => ({
   supplychain: '0x5d9c8515ff01eD287b940c311B7175da9ddF31D2',
   donation: '0xf3aB3e5c6617E18fb9842308Dfa91eB755e92b35'

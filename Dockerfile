@@ -3,6 +3,7 @@ WORKDIR /app
 RUN apk add make gcc g++ python git
 COPY  . .
 RUN npm install
+RUN npm run compile
 RUN npm run build
 
 FROM nginx:1.13.7-alpine
