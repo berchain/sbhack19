@@ -17,9 +17,7 @@
     "@nuxtjs/pwa": "3.0.0-beta.16",
     "ipfs-http-client": "^32.0.1",
     "nuxt": "2.8.1",
-    "openzeppelin-solidity": "^2.3.0",
-    "truffle-contract": "4.0.21",
-    "web3": "1.0.0-beta.55"
+    "openzeppelin-solidity": "^2.3.0"
   },
   "devDependencies": {
     "tailwindcss": "^1.0.4",
