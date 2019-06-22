@@ -19,8 +19,7 @@
     "node-sass": "^4.12.0",
     "nuxt": "2.8.1",
     "sass-loader": "^7.1.0",
-    "truffle-contract": "4.0.21",
-    "web3": "1.0.0-beta.55"
+    "openzeppelin-solidity": "^2.3.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",

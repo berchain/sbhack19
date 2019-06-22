@@ -24,6 +24,10 @@ export default {
    ** Global CSS
    */
   css: ['~/assets/css/tailwind.css'],
+  env: {
+    ipfsHOST: process.env.NUXT_APP_IPFS_HOST || '172.20.0.101',
+    ipfsPORT: process.env.NUXT_APP_IPFS_PORT || '5001'
+  },
   /*
    ** Plugins to load before mounting the App
    */
