@@ -8,7 +8,10 @@
 
 <script>
 export default {
-  components: {}
+  components: {},
+  mounted() {
+    this.$store.dispatch('init')
+  }
 }
 </script>
 
