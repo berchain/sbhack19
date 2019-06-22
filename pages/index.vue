@@ -109,6 +109,7 @@ export default {
     } */
     // await this.$store.dispatch('ipfs/storeData', data)
     await this.$store.dispatch('init')
+    // await this.$store.dispatch('contract/buy', 5000000000)
     /* await this.$store.dispatch('contract/addProduct', {
       id: this.$store.state.product_id,
       ipfs: 'QmP3REAnN3HLr4jKwgDwzSAiiCUE9LPXuHDR6ofA8Dpi2k',

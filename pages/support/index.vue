@@ -63,7 +63,8 @@ export default {
   components: { AppButtonBack },
   data() {
     return {
-      donation: ''
+      donation: 0,
+      receiver: '0x9282237d0587c3611ec6dE080d3458D86D980672'
     }
   },
   methods: {
@@ -72,8 +73,15 @@ export default {
         this.donation--
       }
     },
-    makeDonation() {
-      this.$router.push('/çonfirmation')
+    async makeDonation() {
+      const data = await this.$store.dispatch('contract/donate', {
+        to: this.receiver,
+        amount: this.donation
+      })
+      this.donation = 0
+      if (data) {
+        this.$router.push(`/çonfirmation/${data}`)
+      }
     }
   }
 }

@@ -5,7 +5,7 @@ import SupplyChain from '../build/contracts/SupplyChain.json'
 import Donation from '../build/contracts/Donation.json'
 export const state = () => ({
   supplychain: '0x5d9c8515ff01eD287b940c311B7175da9ddF31D2',
-  donation: '0xf3aB3e5c6617E18fb9842308Dfa91eB755e92b35'
+  donation: '0x2766a756816DeED02dfcD74ad941DcFA093E411B'
 })
 
 export const actions = {
@@ -140,11 +140,12 @@ export const actions = {
       throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
-  buy: function({ rootState: { web3 }, state }, amount) {
+  buy: function({ rootState: { web3, address }, state }, amount) {
     if (web3) {
       const contract = window.web3.eth.contract(Donation.abi).at(state.donation)
       const options = {
-        value: amount
+        value: amount,
+        from: address
       }
       return new Promise((resolve, reject) => {
         contract.buy(options, (err, data) => {
