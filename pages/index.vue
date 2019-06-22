@@ -9,8 +9,9 @@
 <script>
 export default {
   components: {},
-  mounted() {
-    this.$store.dispatch('init')
+  async mounted() {
+    await this.$store.dispatch('init')
+    // this.$store.dispatch('contract/getProductInfo', '123') // how to call a store method
   }
 }
 </script>
