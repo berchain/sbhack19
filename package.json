@@ -10,7 +10,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "compile": "truffle compile",
+    "migrate": "truffle migrate"
   },
   "dependencies": {
     "@nuxtjs/axios": "5.5.4",
@@ -38,6 +40,7 @@
     "eslint-plugin-vue": "^5.2.2",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2",
-    "tailwindcss": "^1.0.4"
+    "tailwindcss": "^1.0.4",
+    "truffle": "^5.0.24"
   }
 }
