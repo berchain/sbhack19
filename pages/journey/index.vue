@@ -2,9 +2,10 @@
   <app-view>
     <app-header title="The Journey" />
     <article class="min-h-screen px-3">
-      <certification />
       <ProductTracker :data="transactions" />
-      <AppButton cta="You ?" url="/you" />
+      <footer class="flex mx-auto">
+        <AppButton cta="See your role" url="/you" />
+      </footer>
     </article>
   </app-view>
 </template>
@@ -13,11 +14,10 @@
 import AppView from '../../components/AppView'
 import AppHeader from '../../components/AppHeader'
 import ProductTracker from '../../components/ProductTracker'
-import Certification from './Certification'
 import AppButton from './AppButton'
 
 export default {
-  components: { AppButton, Certification, ProductTracker, AppHeader, AppView },
+  components: { AppButton, ProductTracker, AppHeader, AppView },
   data() {
     return {
       transactions: [

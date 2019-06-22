@@ -1,6 +1,6 @@
 <template>
   <app-view>
-    <app-header title="Why Fair trade" />
+    <app-header title="What does a fairtrade banana mean?" />
     <article class="p-3">
       <header class="mb-12">
         <p>
@@ -12,20 +12,33 @@
       </header>
       <section>
         <dl>
-          <dt>The economic criteria</dt>
+          <dt>
+            <img src="../../assets/images/economy.png" alt="" />
+            <span>The economic criteria</span>
+          </dt>
           <dd>
             Fairtrade minimum price for workers
           </dd>
           <dd>
             Secure partnerships: producers can request pre-financing from buyers
           </dd>
-          <dt>The environmental criteria</dt>
+        </dl>
+        <dl>
+          <dt>
+            <img src="../../assets/images/environment.png" alt="" />
+            <span>The environmental criteria</span>
+          </dt>
           <dd>Sustainable water & waste management</dd>
           <dd>Preserving biodiversity and soil fertility</dd>
           <dd>Minimum use of pesticides and chemicals</dd>
           <dd>Prohibition of GMOs</dd>
           <dd>Organic production receives higher Fairtrade Minimum Price</dd>
-          <dt>The social criteria</dt>
+        </dl>
+        <dl>
+          <dt>
+            <img src="../../assets/images/social.png" alt="" />
+            <span>The social criteria</span>
+          </dt>
           <dd>Democratic organization (e.g. cooperatives</dd>
           <dd>
             Workers rights (health standards) and non-discrimination policy
@@ -59,15 +72,21 @@ export default {
 </script>
 
 <style scoped lang="scss">
+dl {
+  @apply border-black border-4 bg-yellow-500 p-5 mb-8;
+}
 dt {
-  @apply text-2xl font-semibold mt-8;
+  @apply text-2xl font-semibold flex flex-col mb-5 self-center my-8 text-center p-5;
 }
 dd {
   &:before {
-    content: 'X';
+    content: '\2713';
     display: inline-block;
-    @apply -ml-8 border float-left border-black w-6 h-6 text-center leading-tight font-semibold text-white;
+    @apply -ml-8 border float-left border-black w-6 h-6 text-center leading-none text-2xl font-semibold text-green-700;
   }
   @apply pl-8 mb-2;
+}
+dt img {
+  @apply m-auto w-1/2;
 }
 </style>
