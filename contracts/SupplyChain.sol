@@ -3,7 +3,7 @@ pragma solidity >=0.4.0 <0.7.0;
 contract SupplyChain {
     address public owner;
 
-    enum Stage {DEFAULT, ProductCreated, ProductCertified, SentToProcessor, SentToDistributor, SentToRetailer, Sold}
+    enum Stage {DEFAULT, ProductCreated, ProductPackaged, SentToProcessor, SentToDistributor, SentToRetailer, Sold}
 
     struct Product {
         address producer;
@@ -22,16 +22,16 @@ contract SupplyChain {
         owner = msg.sender;
     }
 
-    function addProduct(string memory ipfs, string memory id) public {
-        Product memory product = Product(msg.sender, address(0), address(0), address(0), address(0), Stage.ProductCreated, ipfs);
+    function addProduct(string memory ipfs, string memory id, address certifier) public {
+        Product memory product = Product(msg.sender, certifier, address(0), address(0), address(0), Stage.ProductCreated, ipfs);
         productMap[id] = product;
         emit ProductUpdated(id, Stage.ProductCreated, ipfs);
     }
 
-    function certifyProduct(string memory ipfs, string memory id) public {
+    function markPackaged(string memory ipfs, string memory id) public {
         productMap[id].ipfsInfo = ipfs;
         productMap[id].certifier = msg.sender;
-        emit ProductUpdated(id, Stage.ProductCertified, ipfs);
+        emit ProductUpdated(id, Stage.ProductPackaged, ipfs);
     }
 
     function sendToProcessor(string memory ipfs, string memory id, address processor) public {
@@ -56,6 +56,10 @@ contract SupplyChain {
         assert(msg.sender == productMap[id].retailer);
         productMap[id].ipfsInfo = ipfs;
         emit ProductUpdated(id, Stage.Sold, ipfs);
+    }
+
+    function getProductInfo(string memory id) public view returns(string memory) {
+        return productMap[id].ipfsInfo;
     }
 
 }
