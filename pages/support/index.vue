@@ -7,25 +7,35 @@
       <h2 class="text-xl text-center pt-5">
         libra by Facebook
       </h2>
-      <div class="m-5">
+      <div class="m-5 flex">
         <input
-          type="text"
-          placeholder="Username"
+          v-model="donation"
+          type="number"
+          placeholder="5"
           class="p-3 w-full border-2 border-gray-400"
         />
-      </div>
-      <div class="m-5">
-        <input
-          type="password"
-          placeholder="Password"
-          class="p-3 w-full border-2 border-gray-400"
-        />
+        <div class="flex flex-row">
+          <button
+            class="w-12 text-3xl btn border-r-2 border-white text-white"
+            @click="donation++"
+          >
+            &#x2B;
+          </button>
+          <button
+            class="w-12 text-3xl btn border-lr-2 border-white text-white disabled:opacity-50"
+            :disabled="donation < 1"
+            :class="[donation < 1 ? 'cursor-not-allowed opacity-50' : '']"
+            @click="minus"
+          >
+            &#8722;
+          </button>
+        </div>
       </div>
       <div class="m-5">
         <button
           class="p-3 w-full text-white flex justify-between"
           style="background-color: rgb(95, 53, 231)"
-          @click="$router.push('/support')"
+          @click="makeDonation"
         >
           <svg
             fill="currentColor"
@@ -37,7 +47,7 @@
             <path
               d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
             /></svg
-          ><span class="m-auto">Facebook login</span>
+          ><span class="m-auto">make donation</span>
         </button>
       </div>
     </section>
@@ -50,12 +60,28 @@
 <script>
 import AppButtonBack from '../journey/AppButtonBack'
 export default {
-  components: { AppButtonBack }
+  components: { AppButtonBack },
+  data() {
+    return {
+      donation: ''
+    }
+  },
+  methods: {
+    minus() {
+      if (this.donation > 0) {
+        this.donation--
+      }
+    },
+    makeDonation() {
+      this.$router.push('/çonfirmation')
+    }
+  }
 }
 </script>
 
 <style scoped>
-.body {
+.body,
+.btn {
   background-color: rgb(95, 53, 231);
 }
 </style>
