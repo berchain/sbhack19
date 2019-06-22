@@ -16,11 +16,13 @@
                   class="w-4/5"
                 />
               </figure>
-              <h3 class="font-semibold">Fair-trade</h3>
-              <p>
-                See transaction on Blockchain
-                <a href="#querystring">{{ hash }}</a>
-              </p>
+              <article class="ml-5">
+                <h3 class="font-semibold">Fair-trade</h3>
+                <p>
+                  See transaction on Blockchain
+                  <a href="#querystring">{{ hash }}</a>
+                </p>
+              </article>
             </div>
           </li>
         </ul>
