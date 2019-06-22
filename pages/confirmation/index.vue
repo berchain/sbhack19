@@ -18,7 +18,8 @@
               </figure>
               <h3 class="font-semibold">Fair-trade</h3>
               <p>
-                See transaction on blockchain <a href="#querystring">hash</a>
+                See transaction on Blockchain
+                <a href="#querystring">{{ hash }}</a>
               </p>
             </div>
           </li>
@@ -31,7 +32,16 @@
 <script>
 import AppView from '../../components/AppView'
 export default {
-  components: { AppView }
+  components: { AppView },
+  data() {
+    return {
+      hash: ''
+    }
+  },
+  mounted() {
+    const urlParams = new URLSearchParams(window.location.search)
+    this.hash = urlParams.get('hash')
+  }
 }
 </script>
 

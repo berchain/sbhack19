@@ -80,7 +80,7 @@ export default {
       })
       this.donation = 0
       if (data) {
-        this.$router.push(`/çonfirmation/${data}`)
+        this.$router.push(`/confirmation?hash=${data}`)
       }
     }
   }
