@@ -14,14 +14,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.getProductInfo(id, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.getProductInfo(id, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   addProduct: function(
@@ -32,14 +34,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.addProduct(ipfs, id, certifier, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.addProduct(ipfs, id, certifier, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   sendToProcessor: function(
@@ -50,14 +54,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.sendToProcessor(ipfs, id, processor, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.sendToProcessor(ipfs, id, processor, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   sendToDistributor: function(
@@ -68,14 +74,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.sendToDistributor(ipfs, id, distributor, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.sendToDistributor(ipfs, id, distributor, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   sendToRetailer: function(
@@ -86,14 +94,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.sendToRetailer(ipfs, id, retailer, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.sendToRetailer(ipfs, id, retailer, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   markPackaged: function({ rootState: { web3 }, state }, { id, ipfs }) {
@@ -101,14 +111,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.markPackaged(ipfs, id, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.markPackaged(ipfs, id, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   markSold: function({ rootState: { web3 }, state }, { id, ipfs }) {
@@ -116,14 +128,16 @@ export const actions = {
       const contract = window.web3.eth
         .contract(SupplyChain.abi)
         .at(state.supplychain)
-      return contract.markSold(ipfs, id, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.markSold(ipfs, id, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   buy: function({ rootState: { web3 }, state }, amount) {
@@ -132,27 +146,31 @@ export const actions = {
       const options = {
         value: amount
       }
-      return contract.buy(options, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.buy(options, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   },
   donate: function({ rootState: { web3 }, state }, { to, amount }) {
     if (web3) {
       const contract = window.web3.eth.contract(Donation.abi).at(state.donation)
-      return contract.donate(to, amount, (err, data) => {
-        if (err) {
-          throw Error(err)
-        }
-        return data
+      return new Promise((resolve, reject) => {
+        contract.donate(to, amount, (err, data) => {
+          if (err) {
+            reject(err)
+          }
+          resolve(data)
+        })
       })
     } else {
-      throw Error('Web3 not found')
+      throw Error('Web3 not found. Go to the home page and try again.')
     }
   }
 }
