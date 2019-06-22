@@ -1,6 +1,8 @@
 pragma solidity >=0.4.0 <0.7.0;
 
-contract donation{
+import 'openzeppelin-solidity/contracts/token/ERC20/ERC20.sol';
+
+contract donation is ERC20 {
     event donated(address indexed _from, address indexed _to, uint256 amount);
     
     function donate(address payable _to) public payable{
