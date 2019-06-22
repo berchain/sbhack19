@@ -2,7 +2,8 @@
 /* eslint-disable no-undef */
 export const state = () => ({
   web3: false,
-  address: null
+  address: null,
+  product_id: 222222
 })
 
 export const mutations = {

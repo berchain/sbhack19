@@ -20,62 +20,16 @@ export default {
   components: { AppButton, ProductTracker, AppHeader, AppView },
   data() {
     return {
-      transactions: [
-        {
-          title: 'The Farmer',
-          details: {
-            price: '0.09$',
-            place: {
-              lat: 0.999993,
-              lng: 10.44
-            }
-          }
-        },
-        {
-          title: 'Packing Facility',
-          details: {
-            price: '0.09$',
-            place: {
-              lat: 0.999993,
-              lng: 10.44
-            }
-          }
-        },
-        {
-          title: 'Shipping',
-          details: {
-            price: '0.09$',
-            place: {
-              lat: 0.999993,
-              lng: 10.44
-            }
-          }
-        },
-        {
-          title: 'Distribution',
-          details: {
-            price: '0.09$',
-            name: '',
-            description: '',
-            timeStamp: 123418924839718,
-            geo: {
-              lat: 0.999993,
-              lng: 10.44
-            }
-          }
-        },
-        {
-          title: 'Retailer',
-          details: {
-            price: '0.09$',
-            place: {
-              lat: 0.999993,
-              lng: 10.44
-            }
-          }
-        }
-      ]
+      transactions: []
     }
+  },
+  async asyncData({ store }) {
+    const ipfsHash = await store.dispatch(
+      'contract/getProductInfo',
+      store.state.product_id
+    )
+    const data = JSON.parse(await store.dispatch('ipfs/getByHash', ipfsHash))
+    return { transactions: data.transactions }
   }
 }
 </script>
