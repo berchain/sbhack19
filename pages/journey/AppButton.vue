@@ -1,6 +1,6 @@
 <template>
   <button
-    class="border-4 border-black rounded-full py-3 px-8 text-2xl font-semibold bg-yellow-500 focus:bg-yellow-700"
+    class="border-4 border-black rounded-full py-3 text-2xl font-semibold bg-yellow-500 focus:bg-yellow-700 min-w-24"
     @click="$router.push(url)"
   >
     {{ cta }}
@@ -21,3 +21,8 @@ export default {
   }
 }
 </script>
+<style>
+.basic {
+  @apply border-0 py-0;
+}
+</style>

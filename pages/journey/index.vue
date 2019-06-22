@@ -57,8 +57,8 @@ export default {
             price: '0.09$',
             name: '',
             description: '',
-            timeStamp: '',
-            place: {
+            timeStamp: 123418924839718,
+            geo: {
               lat: 0.999993,
               lng: 10.44
             }

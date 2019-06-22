@@ -1,9 +1,9 @@
 <template>
   <header class="p-3 flex justify-between">
-    <nuxt-link to="/">
-      <img src="../assets/images/fairtrade.png" alt="" class="w-12 h-12" />
-    </nuxt-link>
     <h1 class="text-3xl font-semibold">{{ title }}</h1>
+    <nuxt-link to="/" class="-mt-3 -mr-3">
+      <img src="../assets/images/fairtrade.png" alt="" class="w-12" />
+    </nuxt-link>
   </header>
 </template>
 <script>

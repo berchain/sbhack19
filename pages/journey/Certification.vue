@@ -6,21 +6,6 @@
           <h2 class="font-semibold ml-8 pt-4">Certification Process</h2>
         </div>
       </li>
-      <li class="">
-        <div class="ml-5 certification__item">
-          <h3 class="font-semibold ml-8 pt-1">Economic</h3>
-        </div>
-      </li>
-      <li class="">
-        <div class="ml-5 certification__item">
-          <h3 class="font-semibold ml-8 pt-1">Environmental</h3>
-        </div>
-      </li>
-      <li class=" last">
-        <div class="ml-5 certification__item">
-          <h3 class="font-semibold ml-8 pt-1">Social</h3>
-        </div>
-      </li>
     </ol>
   </div>
 </template>
