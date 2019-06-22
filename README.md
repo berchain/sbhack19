@@ -1,4 +1,4 @@
-# sbhack-app
+# FairChain
 
 ## Description
 
@@ -16,7 +16,7 @@ Important Note: Best looks and works in the browser mobile view
 
 ## Active Deployment
 
-- [App](c)
+- [App](http://3.121.195.79:8080)
 - [Project Video](google.com)
 
 ## Build Setup
