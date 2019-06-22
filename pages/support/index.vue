@@ -74,13 +74,15 @@ export default {
       }
     },
     async makeDonation() {
-      const data = await this.$store.dispatch('contract/donate', {
-        to: this.receiver,
-        amount: this.donation
-      })
-      this.donation = 0
-      if (data) {
-        this.$router.push(`/confirmation?hash=${data}`)
+      if (this.donation) {
+        const data = await this.$store.dispatch('contract/donate', {
+          to: this.receiver,
+          amount: this.donation
+        })
+        this.donation = 0
+        if (data) {
+          this.$router.push(`/confirmation?hash=${data}`)
+        }
       }
     }
   }

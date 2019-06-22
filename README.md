@@ -5,12 +5,18 @@
 ## Instructions
 
 ```
-Important Note: This is a PWA build for mobile. Please use a mobile phone to test the app or just open the browser console and change the view to mobile.
+Important Note: Best looks and works in the browser mobile view
 ```
+
+1. Install MetaMask and set it up.
+2. Add Custom RPC: `http://3.121.195.79:8545`
+3. Import this private key so that you can have a working account on our network
+    Private Key: `0xe5184ebb7011f9b796cd114099886099f892dae15e786328acd869d9ec6cfc34`
+4. Once you're set up. Open the [App](http://3.121.195.79:8080)
 
 ## Active Deployment
 
-- [App](http://3.121.195.79:8080)
+- [App](c)
 - [Project Video](google.com)
 
 ## Build Setup
