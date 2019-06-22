@@ -3,8 +3,28 @@
     <li v-for="(tx, index) in data" :key="index">
       <accordion :title="tx.title" :last="index === data.length - 1">
         <ul>
-          <li v-for="(item, i) in tx.details" :key="i" class="journey_detail">
-            <div>{{ item }}</div>
+          <li class="journey_detail">
+            <ul>
+              <li>
+                <h4 class="my-3">{{ tx.details.name }}</h4>
+                <p>{{ tx.details.description }}</p>
+              </li>
+
+              <li>
+                <b class="mr-2">Time:</b
+                >{{ tx.details.timestamp | moment('calendar') }}
+              </li>
+              <li>
+                <b class="mr-2">Location:</b> Lat:{{
+                  tx.details.geo.lat
+                }}
+                Lng:{{ tx.details.geo.lng }}
+              </li>
+              <li>
+                <b class="mr-2">Price</b>{{ tx.details.price }}
+                <b class="mr-2">per unit:</b>{{ tx.details.unit }}
+              </li>
+            </ul>
           </li>
         </ul>
       </accordion>

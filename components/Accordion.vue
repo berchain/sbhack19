@@ -5,7 +5,7 @@
     @click="toggleOpen"
   >
     <h3 class="font-bold ml-8 pt-1">{{ title }}</h3>
-    <div class="accordion__content">
+    <div class="accordion__content ml-8">
       <slot></slot>
     </div>
   </div>
