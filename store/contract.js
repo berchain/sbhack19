@@ -2,9 +2,10 @@
  * All the contract related operations
  */
 import SupplyChain from '../build/contracts/SupplyChain.json'
+import Donation from '../build/contracts/donation.json'
 export const state = () => ({
   supplychain: '0x5d9c8515ff01eD287b940c311B7175da9ddF31D2',
-  donation: ''
+  donation: '0xf3aB3e5c6617E18fb9842308Dfa91eB755e92b35'
 })
 
 export const actions = {
@@ -116,6 +117,35 @@ export const actions = {
         .contract(SupplyChain.abi)
         .at(state.supplychain)
       return contract.markSold(ipfs, id, (err, data) => {
+        if (err) {
+          throw Error(err)
+        }
+        return data
+      })
+    } else {
+      throw Error('Web3 not found')
+    }
+  },
+  buy: function({ rootState: { web3 }, state }, amount) {
+    if (web3) {
+      const contract = window.web3.eth.contract(Donation.abi).at(state.donation)
+      const options = {
+        value: amount
+      }
+      return contract.buy(options, (err, data) => {
+        if (err) {
+          throw Error(err)
+        }
+        return data
+      })
+    } else {
+      throw Error('Web3 not found')
+    }
+  },
+  donate: function({ rootState: { web3 }, state }, { to, amount }) {
+    if (web3) {
+      const contract = window.web3.eth.contract(Donation.abi).at(state.donation)
+      return contract.donate(to, amount, (err, data) => {
         if (err) {
           throw Error(err)
         }
