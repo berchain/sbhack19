@@ -3,8 +3,9 @@
     <app-header title="The Journey" />
     <article class="min-h-screen px-3">
       <ProductTracker :data="transactions" />
-      <footer class="flex mx-auto">
+      <footer class="flex mx-auto flex-col">
         <AppButton cta="See your role" url="/you" />
+        <app-button-back cta="go back" />
       </footer>
     </article>
   </app-view>
@@ -15,9 +16,10 @@ import AppView from '../../components/AppView'
 import AppHeader from '../../components/AppHeader'
 import ProductTracker from '../../components/ProductTracker'
 import AppButton from './AppButton'
+import AppButtonBack from './AppButtonBack'
 
 export default {
-  components: { AppButton, ProductTracker, AppHeader, AppView },
+  components: { AppButtonBack, AppButton, ProductTracker, AppHeader, AppView },
   data() {
     return {
       transactions: []
