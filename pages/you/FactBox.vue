@@ -10,7 +10,8 @@
         {{ title }}
       </h2>
     </figure>
-    <div class="info p-3 bg-white absolute m-3" v-html="info">
+    <div class="info p-3 bg-white absolute m-3">
+      <div v-if="info" v-html="info" />
       <p v-if="text">{{ text }}</p>
     </div>
   </div>
