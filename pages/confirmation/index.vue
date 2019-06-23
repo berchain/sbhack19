@@ -1,38 +1,22 @@
 <template>
   <app-view>
-    <figure>
-<<<<<<< Updated upstream
-      <h1 class="text-white text-6xl font-semibold">Thank you!</h1>
+    <figure class="hero flex">
+      <h1 class="text-6xl font-semibold text-white m-auto">Thank you!</h1>
     </figure>
     <article>
-      <h2 class="text-2xl font-semibold">Track your donations</h2>
-      <section class="border-white border-t-4 mt-5">
-        <ul>
-          <li class="bg-yellow-500 py-10">
-            <div class="flex">
-              <figure class="w-24 rounded-full overflow-hidden block">
-=======
-      <h1 class="text-6xl font-semibold">Thank you!</h1>
-    </figure>
-    <article>
-      <h2 class="text-2xl font-semibold">Track your donations</h2>
+      <h2 class="text-4xl font-semibold">Track your donations</h2>
       <section class="border-t-4 my-5 ">
         <ul>
           <li class="bg-yellow-500 py-10 px-3">
             <div class="flex">
-              <figure class="w-24 rounded-full overflow-hidden">
->>>>>>> Stashed changes
+              <figure class="w-24">
                 <img src="../../assets/images/banana.jpeg" alt="" />
               </figure>
               <article class="ml-5">
                 <h3 class="font-semibold">Fair-trade</h3>
                 <p>
-<<<<<<< Updated upstream
                   See transaction in Blockchain
                   <a href="#querystring">Explorer {{ hash }}</a>
-=======
-                  See transaction on blockchain <a href="#querystring">hash</a>
->>>>>>> Stashed changes
                 </p>
               </article>
             </div>
@@ -40,7 +24,7 @@
         </ul>
       </section>
       <footer>
-        <app-button-back cta="Go to start" url="/" />
+        <app-button-back title="Go to start" url="/" />
       </footer>
     </article>
   </app-view>
@@ -63,4 +47,11 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.hero {
+  background-image: url('~assets/images/thankyou.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+}
+</style>

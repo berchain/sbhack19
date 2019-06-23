@@ -1,6 +1,6 @@
 <template>
   <button class="py-3 text-2xl font-semibold w-full" @click="goTo">
-    Go back
+    {{ title }}
   </button>
 </template>
 <script>
@@ -10,6 +10,10 @@ export default {
     url: {
       type: String,
       default: ''
+    },
+    title: {
+      type: String,
+      default: 'Go back'
     }
   },
   methods: {

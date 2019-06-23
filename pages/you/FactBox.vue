@@ -10,9 +10,10 @@
         {{ title }}
       </h2>
     </figure>
-    <p class="info p-3 bg-white absolute m-3">
-      {{ text }}
-    </p>
+    <div class="info p-3 bg-white absolute m-3">
+      <p v-if="text">{{ text }}</p>
+      <slot></slot>
+    </div>
   </div>
 </template>
 <script>
@@ -53,6 +54,7 @@ export default {
   & .info {
     width: 0;
     opacity: 0;
+    z-index: -10;
   }
 }
 :not(.hide).factbox {

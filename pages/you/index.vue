@@ -20,6 +20,7 @@
         />
       </section>
     </article>
+
     <footer class="bg-green-500 w-full px-5 mb-5">
       <app-button cta="support" url="/login" />
       <app-button-back cta="go back" />
