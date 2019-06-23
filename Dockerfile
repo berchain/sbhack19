@@ -1,8 +1,9 @@
 FROM node:10.15.1-alpine as sbhack19-build
 WORKDIR /app
 RUN apk add make gcc g++ python git
-COPY  . .
+COPY package.json package.json
 RUN npm install
+COPY  . .
 RUN npm run compile
 RUN npm run build
 

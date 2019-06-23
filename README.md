@@ -70,10 +70,9 @@ Important Note-2: Best looks and works in the desktop browser mobile view.
     - `0xfeafd5aded804f8fd5310a2f441f54631ac5ac75c739cf7b1206b25e763f9a24`
 4. Now, you're all set up. Open the [App](http://3.121.195.79:8080).
 
-## Demos
+## Demos(Before accessing the app follow the instructions above)
 
 - [App](http://3.121.195.79:8080)
-- [Project Video](google.com)
 - [Project Repo](https://github.com/berchain/sbhack19)
 
 ## Build Setup
