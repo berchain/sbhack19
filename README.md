@@ -13,8 +13,8 @@ Important Note-2: Best looks and works in the browser mobile view.
 
 1. Install MetaMask and set it up. You can find it here:
    [Chrome](https://chrome.google.com/webstore/detail/nkbihfbeogaeaoehlefnkodbefgpgknn), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/), [Opera](https://addons.opera.com/en/extensions/details/metamask/)
-2. Add Custom RPC: `http://3.121.195.79:8545`
-3. Import any of the private keys so that you can have a working account on our network.
+2. Add Custom RPC to your MetaMask: `http://3.121.195.79:8545`.
+3. Import any of the private keys in the MetaMask so that you can have a working account on our network.
    Both account come with preloaded ethers and some tokens that you can use.
     - `0xe5184ebb7011f9b796cd114099886099f892dae15e786328acd869d9ec6cfc34`
     - `0xfeafd5aded804f8fd5310a2f441f54631ac5ac75c739cf7b1206b25e763f9a24`
