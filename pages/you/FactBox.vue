@@ -1,11 +1,11 @@
 <template>
   <div class=" w-1/3 relative factbox" :class="{ hide: !isOpen }">
     <figure
-      class="text-4xl font-semibold border-black border-t-4 border-b-4 relative p-2 h-40 flex justify-middle align-center flex-col"
+      class="text-4xl font-semibold border-black border-t-4 border-b-4 relative p-2 h-48 flex justify-middle align-center flex-col"
       @click="toggle"
     >
       {{ stats }}
-      <img v-if="src" src="src" alt="" />
+      <img v-if="src" :src="src" alt="" class="w-20" />
       <h2 class="text-xl font-semibold" style="line-height: 1">
         {{ title }}
       </h2>

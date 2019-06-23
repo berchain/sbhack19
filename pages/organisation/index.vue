@@ -1,50 +1,31 @@
 <template>
   <app-view>
     <app-header title="What does a fairtrade banana mean?" />
-    <article class="p-3">
-      <header class="mb-12">
+    <article>
+      <section class="mb-12 p-3">
+        <h2 class="text-2xl font-semibold mb-5 mt-8">
+          This product has been certified with the “Fairtrade” mark
+        </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eveniet
-          excepturi iusto natus nobis rerum sapiente unde vel veniam. Aliquid
-          distinctio harum in laudantium nam placeat possimus quam temporibus,
-          velit.
+          We bring transparency to the supply chain and the certification
+          process. Explore the certification process documented on blockchain.
         </p>
-      </header>
-      <section>
-        <dl>
-          <dt>
-            <img src="../../assets/images/economy.png" alt="" />
-            <span>The economic criteria</span>
-          </dt>
-          <dd>
-            Fairtrade minimum price for workers
-          </dd>
-          <dd>
-            Secure partnerships: producers can request pre-financing from buyers
-          </dd>
-        </dl>
-        <dl>
-          <dt>
-            <img src="../../assets/images/environment.png" alt="" />
-            <span>The environmental criteria</span>
-          </dt>
-          <dd>Sustainable water & waste management</dd>
-          <dd>Preserving biodiversity and soil fertility</dd>
-          <dd>Minimum use of pesticides and chemicals</dd>
-          <dd>Prohibition of GMOs</dd>
-          <dd>Organic production receives higher Fairtrade Minimum Price</dd>
-        </dl>
-        <dl>
-          <dt>
-            <img src="../../assets/images/social.png" alt="" />
-            <span>The social criteria</span>
-          </dt>
-          <dd>Democratic organization (e.g. cooperatives</dd>
-          <dd>
-            Workers rights (health standards) and non-discrimination policy
-          </dd>
-          <dd>Forced and child labour strictly prohibited</dd>
-        </dl>
+        <h2 class="text-2xl font-semibold mb-5 mt-8">
+          What makes a banana Fairtrade?
+        </h2>
+        <p>
+          Explore the three sets of criteria that the fairtrade producers must
+          meet:
+        </p>
+      </section>
+      <section class="flex">
+        <factBox
+          v-for="(fact, i) in facts"
+          :key="i"
+          :src="fact.src"
+          :title="fact.title"
+          :text="fact.text"
+        />
       </section>
       <div class="flex">
         <div class="flex flex-col w-3/4 mx-auto mt-24 mb-10">
@@ -65,9 +46,32 @@
 import AppView from '../../components/AppView'
 import AppHeader from '../../components/AppHeader'
 import AppButton from '../journey/AppButton'
+import FactBox from '../you/FactBox'
 export default {
   name: 'Index',
-  components: { AppButton, AppHeader, AppView }
+  components: { FactBox, AppButton, AppHeader, AppView },
+  data() {
+    return {
+      facts: [
+        {
+          title: 'Creating job security',
+          src: require('~/assets/images/economy.png'),
+          text: `98% of workers on Fairtrade plantations in Colombia reported feeling a
+      sense of job security, compared to 9% on non-Fairtrade plantations.`
+        },
+        {
+          title: 'Changing commun-ities.',
+          src: require('~/assets/images/environment.png'),
+          text: `96% of banana smallholders in Colombia said that their economic situation had improved since joining Fairtrade, while for 91% of the workers the household assets have increased by an average of 64%.`
+        },
+        {
+          title: 'Investing in bio-diversity.',
+          src: require('~/assets/images/social.png'),
+          text: `31 days of training every year is what smallholders in Colombia receive from Fairtrade. This helps them to develop their businesses and improve agriculture techniques to make the products more sustainable.`
+        }
+      ]
+    }
+  }
 }
 </script>
 
