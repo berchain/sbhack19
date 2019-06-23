@@ -1,11 +1,11 @@
 <template>
   <app-view>
-    <figure class="hero flex">
-      <h1 class="text-6xl font-semibold text-white m-auto">Thank you!</h1>
+    <figure class="hero flex flex-col text-white">
+      <h1 class="text-6xl font-semibold mt-auto">Thank you!</h1>
+      <h2 class="text-4xl font-semibold my-5">Track your donations</h2>
     </figure>
     <article>
-      <h2 class="text-4xl font-semibold">Track your donations</h2>
-      <section class="border-t-4 my-5 ">
+      <section class="border-t-4">
         <ul>
           <li class="bg-yellow-500 py-10 px-3">
             <div class="flex">
@@ -15,15 +15,17 @@
               <article class="ml-5">
                 <h3 class="font-semibold">Fair-trade</h3>
                 <p>
-                  See transaction in Blockchain
-                  <a href="#querystring">Explorer {{ hash }}</a>
+                  Open transaction in the
+                  <a href="#querystring" class="font-semibold"
+                    >Blockchain Explorer {{ hash }}</a
+                  >
                 </p>
               </article>
             </div>
           </li>
         </ul>
       </section>
-      <footer>
+      <footer class="mt-5">
         <app-button-back title="Go to start" url="/" />
       </footer>
     </article>
@@ -52,6 +54,7 @@ export default {
   background-image: url('~assets/images/thankyou.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 50vh;
+  background-blend-mode: darken;
+  height: 60vh;
 }
 </style>
