@@ -2,8 +2,9 @@ GIT_DESCR = $(shell git describe --always)
 # build output folder
 OUTPUTFOLDER = dist
 # docker image
+DOCKER_REGISTRY = shekharshubhendu
 DOCKER_IMAGE = sbhack19-berchain
-DOCKER_TAG = $(shell git describe --always --tags)
+DOCKER_TAG = latest
 
 
 .PHONY: list
@@ -23,6 +24,12 @@ build:
 docker-build:
 	@echo build image
 	docker build -t $(DOCKER_IMAGE) -f Dockerfile .
+	@echo done
+
+docker-push:
+	@echo push image
+	docker tag $(DOCKER_IMAGE) $(DOCKER_REGISTRY)/$(DOCKER_IMAGE):$(DOCKER_TAG)
+	docker push $(DOCKER_REGISTRY)/$(DOCKER_IMAGE):$(DOCKER_TAG)
 	@echo done
 
 debug-start:
