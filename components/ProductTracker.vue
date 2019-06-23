@@ -9,20 +9,40 @@
                 <h4 class="my-3">{{ tx.details.name }}</h4>
                 <p>{{ tx.details.description }}</p>
               </li>
-
+              <li v-if="tx.details.date_of_arrival">
+                <b class="mr-2">Arrived:</b>{{ tx.details.date_of_arrival }}
+              </li>
+              <li v-if="tx.details.date_of_inspection">
+                <b class="mr-2">Inspected:</b
+                >{{ tx.details.date_of_inspection }}
+              </li>
+              <li v-if="tx.details.date_of_packaging">
+                <b class="mr-2">Packed:</b>{{ tx.details.date_of_packaging }}
+              </li>
+              <li v-if="tx.details.date_of_shipping">
+                <b class="mr-2">Shipped on:</b>{{ tx.details.date_of_shipping }}
+              </li>
+              <li v-if="tx.details.port_of_origin">
+                <b class="mr-2">From:</b>{{ tx.details.port_of_origin }}
+              </li>
+              <li v-if="tx.details.port_of_destination">
+                <b class="mr-2">To:</b>{{ tx.details.port_of_destination }}
+              </li>
+              <li v-if="tx.details.ripening_facility">
+                <b class="mr-2">Ripening facility:</b
+                >{{ tx.details.ripening_facility }}
+              </li>
               <li>
-                <b class="mr-2">Time:</b
+                <b class="mr-2">When:</b
                 >{{ tx.details.timestamp | moment('calendar') }}
               </li>
               <li>
-                <b class="mr-2">Location:</b> Lat:{{
-                  tx.details.geo.lat
+                <b class="mr-2">Geo:</b> Lat:{{ tx.details.geo.lat }} Lng:{{
+                  tx.details.geo.lng
                 }}
-                Lng:{{ tx.details.geo.lng }}
               </li>
-              <li>
-                <b class="mr-2">Price</b>{{ tx.details.price }}
-                <b class="mr-2">per unit:</b>{{ tx.details.unit }}
+              <li class="mt-5">
+                <b>{{ tx.details.info }}</b>
               </li>
             </ul>
           </li>
