@@ -18,9 +18,9 @@ Important Note-2: Best looks and works in the browser mobile view.
    Both account come with preloaded ethers and some tokens that you can use.
     - `0xe5184ebb7011f9b796cd114099886099f892dae15e786328acd869d9ec6cfc34`
     - `0xfeafd5aded804f8fd5310a2f441f54631ac5ac75c739cf7b1206b25e763f9a24`
-4. Once you're set up. Open the [App](http://3.121.195.79:8080)
+4. Now, you're all set up. Open the [App](http://3.121.195.79:8080).
 
-## Active Deployment
+## Demos
 
 - [App](http://3.121.195.79:8080)
 - [Project Video](google.com)
@@ -48,15 +48,30 @@ $ yarn run compile
 $ yarn run migrate
 ```
 
-## Build for Docker
+## Docker
 
 ```bash
-# build image
+# build your own image
 $ make docker-build
+
+# OR get the one that we've built for you
+$ docker pull shekharshubhendu/sbhack19-berchain:latest
 
 # launch the container and open localhost:8080
 $ docker run --name sbhack19-berchain -p 8080:80 sbhack19-berchain:latest
 ```
+
+## Our Dev Stack
+
+- [MetaMask](https://metamask.io/)
+- [Nuxt.js](https://nuxtjs.org)
+- [Ethereum](https://www.ethereum.org/)
+- [Solidity](https://github.com/ethereum/solidity)
+- [Web3.js](https://github.com/ethereum/web3.js)
+- [Truffle Suit](http://trufflesuite.com)
+- [Docker](https://www.docker.com/)
+- [Nginx](https://www.nginx.com/)
+- [AWS](https://aws.amazon.com/)
 
 ## License
 
