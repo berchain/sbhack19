@@ -24,7 +24,7 @@
           :key="i"
           :src="fact.src"
           :title="fact.title"
-          :text="fact.text"
+          :info="fact.info"
         />
       </section>
       <div class="flex">
@@ -54,20 +54,28 @@ export default {
     return {
       facts: [
         {
-          title: 'Creating job security',
+          title: 'Economic criteria',
           src: require('~/assets/images/economy.png'),
-          text: `98% of workers on Fairtrade plantations in Colombia reported feeling a
-      sense of job security, compared to 9% on non-Fairtrade plantations.`
+          info: `<ul class="list-disc ml-5"><li>Fairtrade minimum price for workers </li></ul>`
         },
         {
-          title: 'Changing commun-ities.',
+          title: 'Environ-mental criteria',
           src: require('~/assets/images/environment.png'),
-          text: `96% of banana smallholders in Colombia said that their economic situation had improved since joining Fairtrade, while for 91% of the workers the household assets have increased by an average of 64%.`
+          info: `<ul class="list-disc ml-5">
+                    <li>Sustainable water & waste management</li>
+                    <li>Preserving biodiversity and soil fertility</li>
+                    <li>Minimum use of pesticides and chemicals</li>
+                    <li>Prohibition of GMOs</li>
+                </ul>`
         },
         {
-          title: 'Investing in bio-diversity.',
+          title: 'Social criteria',
           src: require('~/assets/images/social.png'),
-          text: `31 days of training every year is what smallholders in Colombia receive from Fairtrade. This helps them to develop their businesses and improve agriculture techniques to make the products more sustainable.`
+          info: `<ul class="list-disc ml-5">
+                    <li>Democratic organization (e.g. cooperatives)</li>
+                    <li>Workers rights (health standards) and non-discrimination policy</li>
+                    <li>Forced and child labour strictly prohibited</li>
+                </ul>`
         }
       ]
     }

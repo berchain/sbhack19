@@ -10,9 +10,8 @@
         {{ title }}
       </h2>
     </figure>
-    <div class="info p-3 bg-white absolute m-3">
+    <div class="info p-3 bg-white absolute m-3" v-html="info">
       <p v-if="text">{{ text }}</p>
-      <slot></slot>
     </div>
   </div>
 </template>
@@ -33,6 +32,10 @@ export default {
       default: ''
     },
     text: {
+      type: String,
+      default: ''
+    },
+    info: {
       type: String,
       default: ''
     }
