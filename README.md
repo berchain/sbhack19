@@ -118,7 +118,7 @@ $ docker run --name sbhack19-berchain -p 8080:80 sbhack19-berchain:latest
 - [Ethereum](https://www.ethereum.org/)
 - [Solidity](https://github.com/ethereum/solidity)
 - [Web3.js](https://github.com/ethereum/web3.js)
-- [Truffle Suit](http://trufflesuite.com)
+- [Truffle Suite](http://trufflesuite.com)
 - [IPFS](https://ipfs.io)
 - [Docker](https://www.docker.com/)
 - [Nginx](https://www.nginx.com/)
